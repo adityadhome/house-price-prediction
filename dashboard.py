@@ -7,7 +7,7 @@ st.markdown("<style>.main-header{font-size:3rem;font-weight:900;background:-webk
 
 @st.cache_data
 def get_data():
-    df = pd.read_csv(r"C:\Users\Ashish\Downloads\house price preduction\data.csv").dropna()
+    df = pd.read_csv("data.csv").dropna()
     return df, df.drop(["date", "street", "city", "statezip", "country"], axis=1, errors='ignore')
 
 r_df, c_df = get_data()

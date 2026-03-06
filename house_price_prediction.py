@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
 
 # Step 2 : Load Dataset
-df = pd.read_csv(r"C:\Users\Ashish\Downloads\house price preduction\data.csv")
+df = pd.read_csv("data.csv")
 
 # Step 3 : Show Dataset
 print("Dataset Head:")
