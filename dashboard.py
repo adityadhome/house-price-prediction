@@ -129,7 +129,9 @@ with tab1:
 
 with tab2:
     st.subheader("Raw Data Explorer")
-    st.dataframe(raw_df.head(500), use_container_width=True)
+    st.markdown("View a sample of the raw dataset without overloading the browser.")
+    num_rows = st.slider("Select number of rows to display:", min_value=10, max_value=200, value=25, step=5)
+    st.dataframe(raw_df.head(num_rows), use_container_width=True)
 
 with tab3:
     st.subheader("🤖 AI Price Predictor")
