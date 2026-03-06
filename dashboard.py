@@ -37,9 +37,9 @@ with t1:
     
     ta, tb = c_c.tabs(["Distribution", "Space"])
     
-    # Dynamic Color Histogram
-    fig_hist = px.histogram(f_df, x="price", nbins=40, color="price",
-                            color_continuous_scale="RdYlBu_r", title="Price Dist (Red=High, Blue=Low)")
+    # Dynamic Color Histogram/Bar
+    fig_hist = px.histogram(f_df, x="price", nbins=40, color="bedrooms",
+                            title="Price Dist (Colored by Bedrooms)")
     ta.plotly_chart(fig_hist, use_container_width=True)
     
     # Dynamic Color Scatter Plot
