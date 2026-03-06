@@ -36,8 +36,16 @@ with t1:
     c_f.info(f"{len(f_df):,} properties")
     
     ta, tb = c_c.tabs(["Distribution", "Space"])
-    ta.plotly_chart(px.histogram(f_df, x="price", nbins=40, color_discrete_sequence=['#FF6B6B'], title="Price Dist"), use_container_width=True)
-    tb.plotly_chart(px.scatter(f_df, x="sqft_living", y="price", color="bedrooms", size="bathrooms", title="Price vs Living Area"), use_container_width=True)
+    
+    # Dynamic Color Histogram
+    fig_hist = px.histogram(f_df, x="price", nbins=40, color="price",
+                            color_continuous_scale="RdYlBu_r", title="Price Dist (Red=High, Blue=Low)")
+    ta.plotly_chart(fig_hist, use_container_width=True)
+    
+    # Dynamic Color Scatter Plot
+    fig_scatter = px.scatter(f_df, x="sqft_living", y="price", color="price", size="bedrooms", 
+                             color_continuous_scale="RdYlBu_r", title="Price vs Living Area (Red=High)")
+    tb.plotly_chart(fig_scatter, use_container_width=True)
 
 with t2:
     n = st.slider("Rows", 10, 100, 20, 5)
