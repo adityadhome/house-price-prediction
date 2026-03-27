@@ -24,7 +24,7 @@ print("Summary Statistics:\n", df.describe().T[['mean', 'min', 'max']])
 # Step 4: Data Cleaning
 print("\n[3] Cleaning Data...")
 # Drop non-numeric/text columns that are not useful for simple regression
-df = df.drop(["date", "street", "city", "statezip", "country"], axis=1, errors='ignore')
+df = df.drop(["date", "street", "statezip", "country"], axis=1, errors='ignore')
 
 initial_rows = len(df)
 df = df.dropna()
